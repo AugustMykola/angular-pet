@@ -1,18 +1,18 @@
 <div class="bg-surface-50 dark:bg-surface-950 px-6 py-20 md:px-20 lg:px-80 min-h-screen relative">
-    <button 
-        (click)="toggleTheme()"
-        class="absolute top-4 right-4">
-        {{ isDark() ? '☀️' : '🌙' }}
+    <button (click)="toggleTheme()" class="absolute top-4 right-4">
+        {{ isDark() ? '&#9788;' : '&#9789;' }}
     </button>
     <div
-        class="bg-surface-0 dark:bg-surface-900 p-8 md:p-12 shadow-sm rounded-2xl w-full max-w-sm mx-auto flex flex-col gap-8">        <div class="flex flex-col items-center gap-4">
+        class="bg-surface-0 dark:bg-surface-900 p-8 md:p-12 shadow-sm rounded-2xl w-full max-w-sm mx-auto flex flex-col gap-8">
+
+        <div class="flex flex-col items-center gap-4">
             <div class="flex items-center gap-4">
                 <img src="images/logo2.jpg" alt="Logo" class="h-14 w-14">
             </div>
             <div class="flex flex-col items-center gap-2 w-full">
                 <div
                     class="text-surface-900 dark:text-surface-0 text-2xl font-semibold leading-tight text-center w-full whitespace-nowrap">
-                    Welcome ,dude!</div>
+                    Welcome,dude!</div>
                 <div class="text-center w-full whitespace-nowrap">
                     <span class="text-surface-700 dark:text-surface-200 leading-normal">Don't have an account?</span>
                     <a class="text-primary font-medium ml-1 cursor-pointer hover:text-primary-emphasis">Create
@@ -42,7 +42,7 @@
                 <a class="text-primary font-medium cursor-pointer hover:text-primary-emphasis whitespace-nowrap">Forgot
                     your password?</a>
             </div>
-        </div>        <button pButton class="w-full py-2 rounded-lg flex justify-center items-center gap-2">
+        </div> <button pButton class="w-full py-2 rounded-lg flex justify-center items-center gap-2">
             <i pButtonIcon class="pi pi-user text-base! leading-normal!"></i>
             <span pButtonLabel>Sign In</span>
         </button>

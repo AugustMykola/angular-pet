@@ -1,16 +1,5 @@
 import { Injectable } from '@angular/core';
-
-export interface User {
-  email: string;
-  password: string;
-  name: string;
-}
-
-export interface LoginResult {
-  success: boolean;
-  message: string;
-  user?: User;
-}
+import { User, LoginResult } from '../shared';
 
 @Injectable({
   providedIn: 'root'
@@ -20,17 +9,17 @@ export class LoginService {
     {
       email: 'user@example.com',
       password: 'password123',
-      name: 'Иван Иванов'
+      name: 'ivan name'
     },
     {
       email: 'admin@example.com', 
       password: 'admin456',
-      name: 'Администратор'
+      name: 'admin'
     },
     {
       email: 'test@test.com',
       password: 'test',
-      name: 'Тестовый пользователь'
+      name: 'test user'
     }
   ];
 
@@ -38,7 +27,8 @@ export class LoginService {
 
   constructor() { }
 
-  login(email: string, password: string): LoginResult {
+ async login(email: string, password: string): Promise<LoginResult> {
+  await new Promise(resolve => setTimeout(resolve, 1000));
     const user = this.mockUsers.find(
       u => u.email === email && u.password === password
     );
@@ -47,13 +37,13 @@ export class LoginService {
       this.currentUser = user;
       return {
         success: true,
-        message: `Добро пожаловать, ${user.name}!`,
+        message: `Welcome, ${user.name}!`,
         user: user
       };
     } else {
       return {
         success: false,
-        message: 'Неверный email или пароль'
+        message: 'Invalid email or password'
       };
     }
   }
