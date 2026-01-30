@@ -6,11 +6,11 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
-
+import { ThemeToggleDirective } from './directives/theme-toggle.directive';
 @Component({
     selector: 'app-login',
     standalone: true,
-    imports: [CommonModule, FormsModule, ButtonModule, IconFieldModule, InputIconModule, InputTextModule, CheckboxModule],
+    imports: [CommonModule, FormsModule, ButtonModule, IconFieldModule, InputIconModule, InputTextModule, CheckboxModule, ThemeToggleDirective],
     templateUrl: './login.component.html',
     styleUrl: './login.component.scss'
 })
