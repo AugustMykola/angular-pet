@@ -1,5 +1,5 @@
 import { Directive, HostListener, inject, Renderer2 } from '@angular/core';
-import { ThemeService } from '../services/toggle.theme.service'
+import { ThemeService } from '../services/toggle.theme.service';
 
 @Directive({
   selector: '[appThemeToggle]',
