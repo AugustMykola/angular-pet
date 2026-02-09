@@ -1,0 +1,19 @@
+<div class="bg-surface-50 dark:bg-surface-950 min-h-screen p-8">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-surface-900 dark:text-surface-0 text-3xl font-bold">
+        Hi, {{ userName }}! 🎉
+      </h1>
+      <button
+        (click)="logout()"
+        class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors cursor-pointer">
+        Logout
+      </button>
+    </div>
+    <div class="bg-surface-0 dark:bg-surface-900 p-8 rounded-2xl shadow-sm">
+      <p class="text-surface-700 dark:text-surface-200 text-lg">
+        You have successfully logged in! This is your Dashboard.
+      </p>
+    </div>
+  </div>
+</div>
