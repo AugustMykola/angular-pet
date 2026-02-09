@@ -7,7 +7,7 @@ import { LoginService } from '../../../services/login.service';
   standalone: true,
   imports: [],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'],
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
   private readonly loginService = inject(LoginService);
@@ -18,7 +18,7 @@ export class DashboardComponent {
   }
 
   logout(): void {
+    // this.router.navigate(['/login'])
     this.loginService.logout();
-    this.router.navigate(['/login']);
   }
 }
