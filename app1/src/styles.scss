@@ -9,12 +9,20 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
+
 html {
   transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--p-surface-ground);
+  color: var(--p-text-color);
 }
 
 html.dark {
   color-scheme: dark;
+}
+
+body {
+  background-color: var(--p-surface-ground);
 }

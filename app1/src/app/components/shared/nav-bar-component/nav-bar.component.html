@@ -1,0 +1,15 @@
+<div class="dashboard-layout">
+  <p-menubar [model]="menuItems">
+    <ng-template pTemplate="start">
+      <img src="images/logo2.jpg" alt="Logo" class="h-10 w-10 rounded-full mr-4" />
+    </ng-template>
+    <ng-template pTemplate="end"> <p-button icon="pi pi-sign-out" label="Logout" severity="danger" [text]="true"
+        (onClick)="logout()">
+      </p-button>
+    </ng-template>
+  </p-menubar>
+
+  <div class="dashboard-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

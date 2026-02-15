@@ -4,16 +4,15 @@ import { BehaviorSubject } from 'rxjs';
 import { Router } from "@angular/router";
 import { inject } from '@angular/core';
 
-const CASHED_USER = 'currentUser'
+const CACHED_USER = 'currentUser'
 
 @Injectable({
-  
   providedIn: 'root'
 })
 export class LoginService {
  private isLoggedIn = new BehaviorSubject(false)
  public isAuth$ = this.isLoggedIn.asObservable()
- private  router = inject(Router)
+ private router = inject(Router)
 
   private mockUsers: User[] = [
     {
@@ -35,14 +34,21 @@ export class LoginService {
 
   private currentUser: User | null = null;
 
-  constructor() {  }
+  constructor() {
+    const cachedUser = this.getCachedUser();
+    if (cachedUser) {
+      this.currentUser = cachedUser;
+      this.isLoggedIn.next(true);
+    }
+  }
 
   async login(email: string, password: string): Promise<LoginResult> {
-    if (this.getCurrentUser()){
+    if (this.getCurrentUser()) {
+      this.router.navigate(['/dashboard']);
       return {
-        success:false, 
-        message:'Current session is vallid'
-      } 
+        success: true,
+        message: 'Session already active, redirecting...'
+      };
     }
 
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -53,7 +59,7 @@ export class LoginService {
     if (user) {
       this.isLoggedIn.next(true)
       this.currentUser = user;
-      this.setCashedUser(user)
+      this.setCachedUser(user)
       return {
         success: true,
         message: `Welcome, ${user.name}!`,
@@ -69,23 +75,23 @@ export class LoginService {
 
   logout(): void {
     this.currentUser = null;
-    localStorage.removeItem(CASHED_USER)
+    localStorage.removeItem(CACHED_USER)
     this.isLoggedIn.next(false)
     this.router.navigate(['/login'])
   }
 
-  
-
   getCurrentUser(): User | null {
-    return this.getCashedUser() || this.currentUser
+    return this.currentUser || this.getCachedUser()
   }
-  private getCashedUser(){
-    const forParse = localStorage.getItem(CASHED_USER) 
-    
+
+  private getCachedUser(): User | null {
+    const forParse = localStorage.getItem(CACHED_USER)
     return forParse ? JSON.parse(forParse) : null
   }
-  private setCashedUser(user:User): void {
-   const userString = JSON.stringify(user)
-     localStorage.setItem(CASHED_USER,userString)
+
+  private setCachedUser(user: User): void {
+    const { password, ...safeUser } = user;
+    const userString = JSON.stringify(safeUser)
+    localStorage.setItem(CACHED_USER, userString)
   }
 }

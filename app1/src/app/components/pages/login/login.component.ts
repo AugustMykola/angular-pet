@@ -5,8 +5,6 @@ import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
-import { ThemeToggleDirective } from '../../../directives/theme-toggle.directive';
-import { ThemeService } from '../../../services/toggle.theme.service';
 import { LoginService } from '../../../services/login.service';
 
 @Component({
@@ -18,18 +16,15 @@ import { LoginService } from '../../../services/login.service';
     ButtonModule,
     InputTextModule,
     CheckboxModule,
-    ThemeToggleDirective,
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  private readonly themeService = inject(ThemeService);
   private readonly loginService = inject(LoginService);
   private readonly router = inject(Router);
 
   checked1 = signal<boolean>(false);
-  isDark = () => this.themeService.isDarkMode();
 
   email = '';
   password = '';

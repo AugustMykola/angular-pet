@@ -1,0 +1,9 @@
+<p-button
+      [icon]="themeService.isDarkMode() ? 'pi pi-sun' : 'pi pi-moon'"
+      [rounded]="true"
+      [text]="true"
+      severity="secondary"
+      (onClick)="themeService.toggleTheme()"
+      class="fixed bottom-6 right-6 z-50"
+      [style]="{ 'box-shadow': '0 4px 14px rgba(0,0,0,0.15)' }">
+    </p-button>

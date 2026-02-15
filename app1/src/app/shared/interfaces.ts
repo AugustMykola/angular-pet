@@ -9,3 +9,4 @@ export interface LoginResult {
   message: string;
   user?: User;
 }
+
