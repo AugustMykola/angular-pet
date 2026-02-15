@@ -4,7 +4,7 @@ import { LoginService } from '../../../services/login.service';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
-import { ContactComponent } from '../contact-component/contact-component';
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -34,9 +34,9 @@ export class NavBarComponent implements OnInit {
         routerLink: '/dashboard/pricing',
       },
       {
-        label: 'Contact Us',
+        label: 'Contact',
         icon: 'pi pi-envelope',
-        routerLink: '/dashboard/contact-us',
+        routerLink: '/dashboard/contact',
       },
     ];
   }

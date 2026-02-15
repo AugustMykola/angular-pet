@@ -4,10 +4,10 @@ import { RouterModule } from '@angular/router';
 import { ProjectsComponent } from '../../shared/projects-component/projects-component';
 
 @Component({
-  selector: 'app-page-one',
+  selector: 'app-page-projects',
   standalone: true,
   imports: [CommonModule, RouterModule, ProjectsComponent],
-  templateUrl: './page-one.component.html',
-  styleUrls: ['./page-one.component.scss'],
+  templateUrl: './page-projects.component.html',
+  styleUrls: ['./page-projects.component.scss'],
 })
-export class PageOneComponent {}
+export class PageProjectsComponent {}
