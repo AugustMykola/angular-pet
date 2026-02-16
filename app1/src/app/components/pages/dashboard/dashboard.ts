@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { PricingComponent } from '../../shared/pricing-component/pricing-component';
 import { ProjectsComponent } from '../../shared/projects-component/projects-component';
 import { ContactComponent } from '../../shared/contact-component/contact-component';
+
 @Component({
   selector: 'simple-centered',
   standalone: true,

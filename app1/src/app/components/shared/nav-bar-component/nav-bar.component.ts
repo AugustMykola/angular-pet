@@ -4,13 +4,13 @@ import { LoginService } from '../../../services/login.service';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
-
+import { AvatarModule } from 'primeng/avatar'
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RouterOutlet, MenubarModule, ButtonModule],
+  imports: [RouterOutlet, MenubarModule, ButtonModule, AvatarModule],
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss'],
+  styleUrls: ['./nav-bar.component.scss'],  
 })
 export class NavBarComponent implements OnInit {
   private readonly loginService = inject(LoginService);
