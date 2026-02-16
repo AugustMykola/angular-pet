@@ -48,6 +48,13 @@ export const routes: Routes = [
             .then(m => m.PageContactComponent),
         title: 'Contact',
       },
+      {
+        path: 'profile',
+        loadComponent: () =>
+          import(
+            './components/shared/user-profile-component/user-profile-component'
+          ).then((m) => m.UserProfileComponent),
+      },
     ]
   },
   {

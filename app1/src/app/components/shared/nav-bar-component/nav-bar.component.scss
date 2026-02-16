@@ -2,3 +2,11 @@
   display: block;
 }
 
+.p-avatar{
+  cursor:pointer
+  
+}
+.p-avatar:hover {
+  color: #df2121;
+  filter: drop-shadow(0 0 5px rgba(161, 3, 3, 0.7));
+}
