@@ -3,7 +3,7 @@ import { User, LoginResult } from '../models';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from "@angular/router";
 import { inject } from '@angular/core';
-
+import { MOCK_USERS } from '../mocks/users.mock';
 const CACHED_USER = 'currentUser'
 
 @Injectable({
@@ -14,23 +14,7 @@ export class LoginService {
  public isAuth$ = this.isLoggedIn.asObservable()
  private router = inject(Router)
 
-  private mockUsers: User[] = [
-    {
-      email: 'user@example.com',
-      password: 'password123',
-      name: 'ivan name'
-    },
-    {
-      email: 'admin@example.com',
-      password: 'admin456',
-      name: 'admin'
-    },
-    {
-      email: 'test@test.com',
-      password: 'test',
-      name: 'test user'
-    }
-  ];
+
 
   private currentUser: User | null = null;
 
@@ -52,7 +36,7 @@ export class LoginService {
     }
 
     await new Promise(resolve => setTimeout(resolve, 1000));
-    const user = this.mockUsers.find(
+    const user = MOCK_USERS.find(
       u => u.email === email && u.password === password
     );
 
@@ -62,7 +46,7 @@ export class LoginService {
       this.setCachedUser(user)
       return {
         success: true,
-        message: `Welcome, ${user.name}!`,
+        message: `Welcome, ${user.firstName} ${user.lastName}!`,
         user: user
       };
     } else {
@@ -79,9 +63,17 @@ export class LoginService {
     this.isLoggedIn.next(false)
     this.router.navigate(['/login'])
   }
-
   getCurrentUser(): User | null {
     return this.currentUser || this.getCachedUser()
+  }
+
+  updateProfile(data: Partial<User>): void {
+    const current = this.getCurrentUser();
+    if (current) {
+      this.currentUser = { ...current, ...data };
+      this.setCachedUser(this.currentUser);
+      this.isLoggedIn.next(true);
+    }
   }
 
   private getCachedUser(): User | null {

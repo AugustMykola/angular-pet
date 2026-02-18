@@ -1,4 +1,4 @@
-import { Injectable, inject, signal, effect } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { LoginService } from './login.service';
 
 @Injectable({
@@ -21,7 +21,7 @@ export class FirstLetterService {
 
   private updateLetter(): void {
     const user = this.loginService.getCurrentUser();
-    const name = user?.name || user?.email;
+    const name = user?.firstName || user?.email;
     this._letter.set(name ? name.charAt(0).toUpperCase() : 'A');
   }
 

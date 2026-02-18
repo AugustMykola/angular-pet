@@ -1,0 +1,38 @@
+<div class="profile-container">
+  <p-card>
+    <ng-template pTemplate="header">
+      <div class="profile-header">
+        <h2>User Profile</h2>
+      </div>
+    </ng-template>    <div class="profile-content">
+      <div class="avatar-section">
+        @if (user?.avatar) {
+          <p-avatar [image]="user!.avatar" size="xlarge" shape="circle"></p-avatar>
+        } @else {
+          <p-avatar [label]="getInitials()" size="xlarge" shape="circle" class="avatar-initials"></p-avatar>
+        }
+        <div class="user-info">
+          <h3>{{ user?.firstName }} {{ user?.lastName }}</h3>
+          <p class="email">{{ user?.email }}</p>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <div class="info-item">
+          <span class="label">Phone</span>
+          <span class="value">{{ user?.phoneNumber || '-' }}</span>
+        </div>
+
+        <div class="info-item">
+          <span class="label">Country</span>
+          <span class="value">{{ user?.country || '-' }}</span>
+        </div>
+
+        <div class="info-item">
+          <span class="label">City</span>
+          <span class="value">{{ user?.location || '-' }}</span>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</div>

@@ -1,7 +1,13 @@
 export interface User {
+  id: string;
   email: string;
+  firstName: string;
+  lastName: string;
   password: string;
-  name: string;
+  location: string;
+  country: string;
+  phoneNumber: string;
+  avatar?: string;
 }
 
 export interface LoginResult {
