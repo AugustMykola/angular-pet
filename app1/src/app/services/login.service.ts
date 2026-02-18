@@ -1,72 +1,89 @@
 import { Injectable } from '@angular/core';
-
-export interface User {
-  email: string;
-  password: string;
-  name: string;
-}
-
-export interface LoginResult {
-  success: boolean;
-  message: string;
-  user?: User;
-}
+import { User, LoginResult } from '../models';
+import { BehaviorSubject } from 'rxjs';
+import { Router } from "@angular/router";
+import { inject } from '@angular/core';
+import { MOCK_USERS } from '../mocks/users.mock';
+const CACHED_USER = 'currentUser'
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  private mockUsers: User[] = [
-    {
-      email: 'user@example.com',
-      password: 'password123',
-      name: 'Иван Иванов'
-    },
-    {
-      email: 'admin@example.com', 
-      password: 'admin456',
-      name: 'Администратор'
-    },
-    {
-      email: 'test@test.com',
-      password: 'test',
-      name: 'Тестовый пользователь'
-    }
-  ];
+ private isLoggedIn = new BehaviorSubject(false)
+ public isAuth$ = this.isLoggedIn.asObservable()
+ private router = inject(Router)
+
+
 
   private currentUser: User | null = null;
 
-  constructor() { }
+  constructor() {
+    const cachedUser = this.getCachedUser();
+    if (cachedUser) {
+      this.currentUser = cachedUser;
+      this.isLoggedIn.next(true);
+    }
+  }
 
-  login(email: string, password: string): LoginResult {
-    const user = this.mockUsers.find(
+  async login(email: string, password: string): Promise<LoginResult> {
+    if (this.getCurrentUser()) {
+      this.router.navigate(['/dashboard']);
+      return {
+        success: true,
+        message: 'Session already active, redirecting...'
+      };
+    }
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    const user = MOCK_USERS.find(
       u => u.email === email && u.password === password
     );
 
     if (user) {
+      this.isLoggedIn.next(true)
       this.currentUser = user;
+      this.setCachedUser(user)
       return {
         success: true,
-        message: `Добро пожаловать, ${user.name}!`,
+        message: `Welcome, ${user.firstName} ${user.lastName}!`,
         user: user
       };
     } else {
       return {
         success: false,
-        message: 'Неверный email или пароль'
+        message: 'Invalid email or password'
       };
     }
   }
 
   logout(): void {
     this.currentUser = null;
+    localStorage.removeItem(CACHED_USER)
+    this.isLoggedIn.next(false)
+    this.router.navigate(['/login'])
   }
-
-  isLoggedIn(): boolean {
-    return this.currentUser !== null;
-  }
-
   getCurrentUser(): User | null {
-    return this.currentUser;
+    return this.currentUser || this.getCachedUser()
+  }
+
+  updateProfile(data: Partial<User>): void {
+    const current = this.getCurrentUser();
+    if (current) {
+      this.currentUser = { ...current, ...data };
+      this.setCachedUser(this.currentUser);
+      this.isLoggedIn.next(true);
+    }
+  }
+
+  private getCachedUser(): User | null {
+    const forParse = localStorage.getItem(CACHED_USER)
+    return forParse ? JSON.parse(forParse) : null
+  }
+
+  private setCachedUser(user: User): void {
+    const { password, ...safeUser } = user;
+    const userString = JSON.stringify(safeUser)
+    localStorage.setItem(CACHED_USER, userString)
   }
 }
