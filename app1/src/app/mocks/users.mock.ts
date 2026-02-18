@@ -1,12 +1,13 @@
 import { User } from '../models/interfaces';
 
-export const MOCK_USERS: User[] = [  {
+export const MOCK_USERS: User[] = [
+  {
     id: '1',
     email: 'andrey@example.com',
     password: 'password123',
     firstName: 'Andrey',
     lastName: 'Test',
-    avatar: 'images/logo2.jpg',
+    avatar: './images/logo2.jpg',
     location: 'Dnipro',
     country: 'Ukraine',
     phoneNumber: '+7 (999) 123-45-67'
