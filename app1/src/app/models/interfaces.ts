@@ -16,3 +16,9 @@ export interface LoginResult {
   user?: User;
 }
 
+export interface PricingPlan{
+  name: string;
+  description: string;
+  price: string;
+  features: string[];
+}
