@@ -16,3 +16,17 @@ export interface LoginResult {
   user?: User;
 }
 
+export interface PricingPlan{
+  name: string;
+  description: string;
+  price: string;
+  features: string[];
+  duration: string;
+}
+
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+}
