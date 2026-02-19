@@ -21,4 +21,12 @@ export interface PricingPlan{
   description: string;
   price: string;
   features: string[];
+  duration: string;
+}
+
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
 }
