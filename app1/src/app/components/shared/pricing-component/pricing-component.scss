@@ -1,0 +1,36 @@
+.pricing-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 40px
+  }
+
+.pricing-section {
+  &__header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--text-color, #1a1a2e);
+    margin: 0 0 1rem;
+  }
+
+  &__subtitle {
+    color: var(--text-color-secondary, #6b7280);
+    font-size: 18px;
+    margin: 0;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+  }
+}

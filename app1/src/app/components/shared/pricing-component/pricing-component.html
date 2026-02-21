@@ -1,3 +1,24 @@
-<div>
-    <app-pricing-card *ngFor="let plan of pricingPlans" [plan]="plan"></app-pricing-card>
-</div>
+<div class="pricing-section">
+  <div class="pricing-section__header">
+      <h1 class="pricing-section__title">Pricing</h1>
+    </div>
+    <p class="pricing-section__subtitle">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, dolor!
+    </p>
+  </div>
+  <div class="pricing-content">
+    <div class="pricing-section__cards">
+      @for (plan of pricingPlans; track plan.name ) { @let isActive = plan.id === activeCardId();
+      <app-pricing-card
+        [isActive]="isActive"
+        [plan]="plan"
+        (onSelectPlan)="selectPlan($event)"
+        themeToggleEvent="themeToggleEvent"
+      ></app-pricing-card>
+      }
+    </div>
+
+    <div class="pricing-details">
+      <app-pricing-card-right-half [plan]="selectedPlan"></app-pricing-card-right-half>
+    </div>
+  </div>
