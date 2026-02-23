@@ -1,0 +1,21 @@
+<div class="detail-card">
+  <div class="detail-card__header">
+    <div class="detail-card__header-row">
+      <h2 class="detail-card__title">{{ plan().name }}</h2>
+      <div class="detail-card__price-info">{{ plan().price }} / {{ plan().duration }}</div>
+    </div>
+    <p class="detail-card__description">{{ plan().description }}</p>
+  </div>
+
+  <div class="detail-card__content">
+    <h3 class="detail-card__subtitle">Features</h3>
+    <ul class="detail-card__features">
+      @for (feature of plan().features; track feature) {
+      <li class="detail-card__feature-item">
+        <span class="pi pi-check-circle"></span> {{ feature }}
+      </li>
+      }
+    </ul>
+    <button class="detail-card__buy-btn">Buy Now</button>
+  </div>
+</div>

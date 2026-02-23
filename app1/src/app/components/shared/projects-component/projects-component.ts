@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ProjectCardComponent } from './projects-card/project-card';
+
 @Component({
   selector: 'app-projects-component',
   imports: [CommonModule, RouterModule, ProjectCardComponent],
@@ -24,6 +25,24 @@ export class ProjectsComponent {
   },
   {
     id: 3,
+    title: 'Project Three',
+    description: 'Incididunt ut labore et dolore magna.',
+    image: './images/logo2.jpg'
+  },
+  {
+    id: 4,
+    title: 'Project Three',
+    description: 'Incididunt ut labore et dolore magna.',
+    image: './images/logo2.jpg'
+  },
+  {
+    id: 5,
+    title: 'Project Three',
+    description: 'Incididunt ut labore et dolore magna.',
+    image: './images/logo2.jpg'
+  },
+  {
+    id: 6,
     title: 'Project Three',
     description: 'Incididunt ut labore et dolore magna.',
     image: './images/logo2.jpg'
