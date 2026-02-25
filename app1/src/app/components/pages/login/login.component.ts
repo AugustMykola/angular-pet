@@ -10,13 +10,7 @@ import { LoginService } from '../../../services/login.service';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    ButtonModule,
-    InputTextModule,
-    CheckboxModule,
-  ],
+  imports: [CommonModule, FormsModule, ButtonModule, InputTextModule, CheckboxModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })

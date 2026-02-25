@@ -11,41 +11,41 @@ import { ProjectCardComponent } from './projects-card/project-card';
 })
 export class ProjectsComponent {
   projects = [
-  {
-    id: 1,
-    title: 'Project One',
-    description: 'Lorem ipsum dolor sit amet consectetur.',
-    image: './images/logo2.jpg'
-  },
-  {
-    id: 2,
-    title: 'Project Two',
-    description: 'Adipisicing elit sed do eiusmod tempor.',
-    image: './images/logo2.jpg'
-  },
-  {
-    id: 3,
-    title: 'Project Three',
-    description: 'Incididunt ut labore et dolore magna.',
-    image: './images/logo2.jpg'
-  },
-  {
-    id: 4,
-    title: 'Project Three',
-    description: 'Incididunt ut labore et dolore magna.',
-    image: './images/logo2.jpg'
-  },
-  {
-    id: 5,
-    title: 'Project Three',
-    description: 'Incididunt ut labore et dolore magna.',
-    image: './images/logo2.jpg'
-  },
-  {
-    id: 6,
-    title: 'Project Three',
-    description: 'Incididunt ut labore et dolore magna.',
-    image: './images/logo2.jpg'
-  }
-];
+    {
+      id: 1,
+      title: 'Builds for Developers',
+      description: 'Lorem ipsum dolor sit amet consectetur.',
+      image: 'pi pi-desktop',
+    },
+    {
+      id: 2,
+      title: 'End-To-End Encrypted',
+      description: 'Adipisicing elit sed do eiusmod tempor.',
+      image: 'pi pi-unlock',
+    },
+    {
+      id: 3,
+      title: 'Fast & Global Support',
+      description: 'Incididunt ut labore et dolore magna.',
+      image: 'pi pi-globe',
+    },
+    {
+      id: 4,
+      title: 'Open Source',
+      description: 'Incididunt ut labore et dolore magna.',
+      image: 'pi pi-github',
+    },
+    {
+      id: 5,
+      title: 'Easy to Use',
+      description: 'Incididunt ut labore et dolore magna.',
+      image: 'pi pi-face-smile',
+    },
+    {
+      id: 6,
+      title: 'Trusted Security',
+      description: 'Incididunt ut labore et dolore magna.',
+      image: 'pi pi-shield',
+    },
+  ];
 }

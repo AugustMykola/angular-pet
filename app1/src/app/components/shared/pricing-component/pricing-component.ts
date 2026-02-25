@@ -2,13 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { PricingCardComponent } from './pricing-card/pricing-card';
-import { PricingCardRightHalfComponent } from './pricing-card/pricing-card-right-half/pricing-card-right-half';
+import { DetailCardComponent } from './pricing-card/details/detail-card';
 import { PricingPlan } from '../../../models';
-
 @Component({
   selector: 'app-pricing',
   standalone: true,
-  imports: [ButtonModule, CommonModule, PricingCardComponent, PricingCardRightHalfComponent] ,
+  imports: [ButtonModule, CommonModule, PricingCardComponent, DetailCardComponent],
   templateUrl: './pricing-component.html',
   styleUrls: ['./pricing-component.scss'],
 })
@@ -21,7 +20,7 @@ export class PricingComponent {
       description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
       features: ['Arcu vitae elementum', 'Dui faucibus in ornare', 'Morbi tincidunt augue'],
       duration: 'month',
-      price: '$9',
+      price: '9',
       icon: 'pi pi-pencil',
     },
     {
@@ -36,7 +35,7 @@ export class PricingComponent {
         'Duis ultricies lacus',
       ],
       duration: 'month',
-      price: '$29',
+      price: '29',
       icon: 'pi pi-palette',
     },
     {
@@ -52,7 +51,7 @@ export class PricingComponent {
         'Premium support',
       ],
       duration: 'month',
-      price: '$99',
+      price: '99',
       icon: 'pi pi-image',
     },
   ];
