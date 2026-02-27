@@ -1,0 +1,52 @@
+.project-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  &__end-title{
+    color: #10b981;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.0625rem;
+    max-width: 37.5rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    width: 100%;
+    max-width: 75rem;
+  }
+}

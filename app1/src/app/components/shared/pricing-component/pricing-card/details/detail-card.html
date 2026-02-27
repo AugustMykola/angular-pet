@@ -2,7 +2,7 @@
   <div class="detail-card__header">
     <div class="detail-card__header-row">
       <h2 class="detail-card__title">{{ plan().name }}</h2>
-      <div class="detail-card__price-info">{{ plan().price }} / {{ plan().duration }}</div>
+      <div class="detail-card__price-info">{{ plan().price | currency:'USD':'symbol':"1.0" }} / {{ plan().duration }}</div>
     </div>
     <p class="detail-card__description">{{ plan().description }}</p>
   </div>

@@ -1,12 +1,7 @@
-:host {
-  display: block;
-}
-
 .pricing-card {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 24px;
+  gap: 20px;
   height: 150px;
   width: 500px;
   max-width: 550px;
@@ -15,18 +10,10 @@
   border-radius: 16px;
   box-shadow: 0 4px 0.75rem rgba(0, 0, 0, 0.05);
   padding: 32px;
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     cursor: pointer;
   }
-
-  &__header {
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-  }
-
   &__title {
     font-size: 17px;
     font-weight: 700;
@@ -50,18 +37,7 @@
     font-weight: 700;
     color: #6b7280;
   }
-  &__info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
 }
-
-.active {
-  outline: 2px solid #10b981;
-}
-
 .pi {
   display: flex;
   align-items: center;
@@ -81,6 +57,7 @@
 
 .active {
   background: linear-gradient(135deg, #d1fae5 0%, #10b981 100%);
+  outline: 2px solid #10b981;
 
   .pricing-card__desc {
     color: #000;
