@@ -1,0 +1,10 @@
+<h1 class="main-info__title">User Profile</h1>
+<div class="main-info">
+  <div class="main-info__avatar">
+    <img [src]="user().avatar" alt="avatar" />
+  </div>
+  <div class="main-info__details">
+    <h3 class="main-info__name">{{ user().firstName }} {{ user().lastName }}</h3>
+    <p class="main-info__email">{{ user().email }}</p>
+  </div>
+</div>

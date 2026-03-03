@@ -1,0 +1,10 @@
+<div class="main">
+  <div class="main__nav-panel"><app-profile-navigation></app-profile-navigation></div>
+  <div class="main__content">
+    <div class="main__container">
+      @if (user) {
+      <app-main-info [user]="user"></app-main-info>
+      }
+    </div>
+  </div>
+</div>
