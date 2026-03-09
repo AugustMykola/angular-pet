@@ -1,0 +1,21 @@
+<div class="personal-info">
+  <div class="personal-info__title">
+    Personal Information
+  </div>
+
+  <div class="personal-info__row">
+    <span class="personal-info__label">Full Name:</span>
+    <span class="personal-info__value">{{ user().firstName }} {{ user().lastName }}</span>
+  </div>
+
+  <div class="personal-info__row">
+    <span class="personal-info__label">Email:</span>
+    <span class="personal-info__value">{{ user().email }}</span>
+  </div>
+
+  <div class="personal-info__row">
+    <span class="personal-info__label">Phone:</span>
+    <span class="personal-info__value">{{ user().phoneNumber }}</span>
+  </div>
+  <button class="personal-info__edit-button">Edit Profile</button>
+</div> 

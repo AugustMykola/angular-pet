@@ -1,4 +1,4 @@
-.pass-info {
+.personal-info {
   padding: 20px;
   margin-top: 20px;
 
@@ -26,17 +26,17 @@
     font-weight: 500;
     color: #6b7280;
   }
+
   &__value {
     color: #1f2937;
     padding: 8px 12px;
     width: 300px;
-    height: 40px;
     background-color: #f9fafb;
     border-radius: 6px;
     border: #dae6f8 1px solid;
   }
-  &__edit-button {
-    background-color: #7c7c7c;
+  &__edit-button{
+    background-color: #00abfa;
     height: 40px;
     width: 150px;
     font-weight: 500;

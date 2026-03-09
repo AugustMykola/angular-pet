@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
-import { LoginService, FirstLetterService } from '../../../services';
+import { LoginService } from '../../../services';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
@@ -15,7 +15,6 @@ import { AvatarModule } from 'primeng/avatar';
 })
 export class NavBarComponent implements OnInit {
   private readonly loginService = inject(LoginService);
-  firstLetterService = inject(FirstLetterService);
 
   menuItems: MenuItem[] = [];
   ngOnInit(): void {

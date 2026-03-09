@@ -1,1 +1,13 @@
-<p>pass-information works!</p>
+<div class="pass-info">
+  <div class="pass-info__title">Change Information</div>
+  @for (label of labels; track label) {
+  <div class="pass-info__row">
+    <span class="pass-info__label">{{ label }}</span>
+    <p-iconField>
+      <p-inputIcon styleClass="pi pi-lock" />
+      <input class="pass-info__value" type="password" />
+    </p-iconField>
+  </div>
+  }
+  <button class="pass-info__edit-button">Edit Password</button>
+</div>

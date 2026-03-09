@@ -1,0 +1,20 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  height: 100%;
+  &__item {
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    &--active {
+      background-color: #00abfa;
+      color: #ffffff;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+}
