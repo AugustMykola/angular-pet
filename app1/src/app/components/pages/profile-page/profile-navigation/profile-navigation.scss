@@ -6,10 +6,12 @@
   font-family: Arial, sans-serif;
   font-size: 15px;
   height: 100%;
+  
   &__item {
     padding: 10px 20px;
     cursor: pointer;
     margin-right: 10px;
+
     &--active {
       background-color: #00abfa;
       color: #ffffff;

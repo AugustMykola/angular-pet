@@ -1,12 +1,12 @@
 <div class="pass-info">
-  <div class="pass-info__title">Change Information</div>
-  @for (label of labels; track label) {
+  <div class="pass-info__title">Change Password</div>
+  @for (field of fields; track field.id) {
   <div class="pass-info__row">
-    <span class="pass-info__label">{{ label }}</span>
-    <p-iconField>
-      <p-inputIcon styleClass="pi pi-lock" />
-      <input class="pass-info__value" type="password" />
-    </p-iconField>
+    <span class="pass-info__label">{{ field.label }}</span>
+    <p-floatlabel variant="on">
+      <p-password [(ngModel)]="passwords[field.id]" [inputId]="field.id" autocomplete="off" />
+      <label [for]="field.id" class="pi pi-lock"></label>
+    </p-floatlabel>
   </div>
   }
   <button class="pass-info__edit-button">Edit Password</button>

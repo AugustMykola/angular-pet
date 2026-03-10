@@ -1,11 +1,15 @@
-.dashboard-layout {
-  height: 100%;
-}
-.dashboard-content {
-  height: 100%;
-}
 :host {
-  display: block;
+  height: 100%;
+}
+
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dashboard-content {
+  flex: 1;
 }
 
 .p-avatar {

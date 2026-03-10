@@ -2,11 +2,11 @@
   @for(item of menuItems(); track item.id) {
   <div
     class="nav__item"
-    (click)="emitActive(item.id)"
     [class.nav__item--active]="activeItem() === item.id"
+    (click)="emitActive(item.id)"
   >
     {{ item.label }}
   </div>
-  
+
   }
 </div>

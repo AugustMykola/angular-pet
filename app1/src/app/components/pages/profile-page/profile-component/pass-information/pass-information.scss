@@ -9,6 +9,7 @@
     font-size: 18px;
     font-weight: 600;
     color: #374151;
+
     &::after {
       content: '';
       flex: 1;
@@ -16,16 +17,19 @@
       background-color: #e0e0e0;
     }
   }
+
   &__row {
     display: flex;
     align-items: center;
     padding: 12px 0;
   }
+
   &__label {
     width: 120px;
     font-weight: 500;
     color: #6b7280;
   }
+
   &__value {
     color: #1f2937;
     padding: 8px 12px;
@@ -35,6 +39,7 @@
     border-radius: 6px;
     border: #dae6f8 1px solid;
   }
+
   &__edit-button {
     background-color: #7c7c7c;
     height: 40px;

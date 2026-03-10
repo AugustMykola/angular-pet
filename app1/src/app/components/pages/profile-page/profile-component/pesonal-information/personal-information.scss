@@ -1,7 +1,7 @@
 .personal-info {
   padding: 20px;
   margin-top: 20px;
-
+  
   &__title {
     display: flex;
     align-items: center;
@@ -9,6 +9,7 @@
     font-size: 18px;
     font-weight: 600;
     color: #374151;
+
     &::after {
       content: '';
       flex: 1;
@@ -16,11 +17,13 @@
       background-color: #e0e0e0;
     }
   }
+
   &__row {
     display: flex;
     align-items: center;
     padding: 12px 0;
   }
+
   &__label {
     width: 120px;
     font-weight: 500;
@@ -35,6 +38,7 @@
     border-radius: 6px;
     border: #dae6f8 1px solid;
   }
+
   &__edit-button{
     background-color: #00abfa;
     height: 40px;
