@@ -1,0 +1,15 @@
+<div class="pricing-card"  [ngClass]="{ 'active': isActive() }" (click)="setActiveCardById()">
+  <div class="pricing-card__icon-container">
+    <i [class]="plan().icon"></i>
+  </div>
+
+  <div class="pricing-card__info">
+    <div class="pricing-card__title-description">
+      <h3 class="pricing-card__title">{{ plan().name }}</h3>
+      <p class="pricing-card__desc">{{ plan().shortDescription }}</p>
+    </div>
+    <div class="pricing-card__price">{{ plan().price | currency:'USD':'symbol':"1.0" }}/{{ plan().duration }}</div>
+  </div>
+</div>
+
+  

@@ -1,0 +1,12 @@
+<div class="nav">
+  @for(item of menuItems(); track item.id) {
+  <div
+    class="nav__item"
+    [class.nav__item--active]="activeItem() === item.id"
+    (click)="emitActive(item.id)"
+  >
+    {{ item.label }}
+  </div>
+
+  }
+</div>

@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 100%;
+  box-sizing: border-box;
+  
+  &__nav-panel {
+    width: 400px;
+    background-color: #e5e7eb;
+    flex-shrink: 0;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    flex: 1;
+    padding: 20px;
+  }
+}

@@ -10,7 +10,7 @@ export const MOCK_USERS: User[] = [
     avatar: './images/logo2.jpg',
     location: 'Dnipro',
     country: 'Ukraine',
-    phoneNumber: '+7 (999) 123-45-67'
+    phoneNumber: '+1 (999) 123-45-67'
   },
   {
     id: '2',
@@ -20,7 +20,7 @@ export const MOCK_USERS: User[] = [
     lastName: 'Сидорова',
     location: 'Lviv',
     country: 'Ukraine',
-    phoneNumber: '+7 (999) 234-56-78',
+    phoneNumber: '+1 (999) 234-56-78',
     avatar:''
   },
   {
