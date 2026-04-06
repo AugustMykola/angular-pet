@@ -1,21 +1,51 @@
-<div class="personal-info">
-  <div class="personal-info__title">
-    Personal Information
-  </div>
-
+<div class="personal-info" [formGroup]="form">
+  <div class="personal-info__title">Personal Information</div>
   <div class="personal-info__row">
-    <span class="personal-info__label">Full Name:</span>
-    <input class="personal-info__value" value="{{ user().firstName }} {{ user().lastName }}" />
+    <span class="personal-info__label">Name:</span>
+    <p-inputgroup>
+      <p-inputgroup-addon>
+        <i class="pi pi-user"></i>
+      </p-inputgroup-addon>
+      <input pInputText formControlName="firstName" placeholder="Name" />
+    </p-inputgroup>
+    @if((form.controls.firstName.hasError('required') ||
+    form.controls.firstName.hasError('pattern'))){
+    <p class="errors">Invalid field</p>
+    }
   </div>
 
   <div class="personal-info__row">
     <span class="personal-info__label">Email:</span>
-    <input class="personal-info__value" value="{{ user().email }}" />
+    <p-inputgroup>
+      <p-inputgroup-addon>
+        <i class="pi pi-envelope"></i>
+      </p-inputgroup-addon>
+      <input pInputText placeholder="Email" formControlName="email" />
+    </p-inputgroup>
+    @if(form.controls.email.hasError('required')){
+    <p class="errors">This field is required</p>
+    } @if( form.controls.email.hasError('email')){
+    <p class="errors">The field does not look like an email address</p>
+    }
   </div>
-
   <div class="personal-info__row">
     <span class="personal-info__label">Phone:</span>
-    <input class="personal-info__value" value="{{ user().phoneNumber }}" />
+    <p-inputgroup>
+      <p-inputgroup-addon>
+        <i class="pi pi-mobile"></i>
+      </p-inputgroup-addon>
+      <input pInputText formControlName="phoneNumber" placeholder="+380..." />
+    </p-inputgroup>
+    @if((form.controls.phoneNumber.hasError('required') ||
+    form.controls.phoneNumber.hasError('pattern'))){
+    <p class="errors">Invalid field</p>
+    }
   </div>
-  <button class="personal-info__edit-button">Edit Profile</button>
-</div> 
+  <button
+    class="personal-info__edit-button"
+    [class.personal-info__edit-button--changed]="form.dirty"
+    (click)="updateProfile()"
+  >
+    Edit Profile
+  </button>
+</div>

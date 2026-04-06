@@ -1,13 +1,36 @@
 <div class="pass-info">
   <div class="pass-info__title">Change Password</div>
+
   @for (field of fields; track field.id) {
   <div class="pass-info__row">
     <span class="pass-info__label">{{ field.label }}</span>
     <p-floatlabel variant="on">
-      <p-password [(ngModel)]="passwords[field.id]" [inputId]="field.id" autocomplete="off" />
+      <p-password
+        [inputId]="field.id"
+        [ngModel]="formState[field.id]()"
+        [feedback]="field.id === 'new'"
+        [toggleMask]="true"
+        (ngModelChange)="formState[field.id].set($event)"
+        autocomplete="off"
+      />
       <label [for]="field.id" class="pi pi-lock"></label>
+      @if (formState[field.id]()) { @if (field.id === 'new') { @if (!isMinLengthValid()) {
+      <span class="errors">The password must be at least 8 characters long</span>
+      } @if (formState.new() === formState.current()) {
+      <span class="errors">The new password is the same as the old one</span>
+      } } @if (field.id === 'confirm' && !isCorrect()) {
+      <span class="errors">The passwords do not match</span>
+      } }
     </p-floatlabel>
   </div>
   }
-  <button class="pass-info__edit-button">Edit Password</button>
+
+  <button
+    class="pass-info__edit-button"
+    [disabled]="!isFormValid()"
+    [class.pass-info__edit-button--valid]="isCorrect()"
+    (click)="changePassword()"
+  >
+    Edit Password
+  </button>
 </div>
