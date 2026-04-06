@@ -1,7 +1,7 @@
 .personal-info {
   padding: 20px;
   margin-top: 20px;
-  
+
   &__title {
     display: flex;
     align-items: center;
@@ -17,11 +17,11 @@
       background-color: #e0e0e0;
     }
   }
-
   &__row {
     display: flex;
     align-items: center;
     padding: 12px 0;
+    flex-wrap: wrap;
   }
 
   &__label {
@@ -39,8 +39,12 @@
     border: #dae6f8 1px solid;
   }
 
-  &__edit-button{
-    background-color: #00abfa;
+  p-inputgroup {
+    width: 300px;
+  }
+
+  &__edit-button {
+    background-color: #7c7c7c;
     height: 40px;
     width: 150px;
     font-weight: 500;
@@ -51,5 +55,15 @@
     cursor: pointer;
     margin-top: 10px;
     margin-left: 120px;
+    &--changed {
+      background-color: #00abfa;
+    }
   }
+}
+.errors {
+  color: red;
+  width: 100%;
+  margin-left: 120px;
+  margin-top: 5px;
+  font-size: 13px;
 }

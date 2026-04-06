@@ -10,7 +10,7 @@ export const MOCK_USERS: User[] = [
     avatar: './images/logo2.jpg',
     location: 'Dnipro',
     country: 'Ukraine',
-    phoneNumber: '+1 (999) 123-45-67'
+    phoneNumber: '+380 (99) 123-45-67',
   },
   {
     id: '2',
@@ -20,8 +20,8 @@ export const MOCK_USERS: User[] = [
     lastName: 'Сидорова',
     location: 'Lviv',
     country: 'Ukraine',
-    phoneNumber: '+1 (999) 234-56-78',
-    avatar:''
+    phoneNumber: '+380 (99) 234-56-78',
+    avatar: '',
   },
   {
     id: '3',
@@ -31,19 +31,19 @@ export const MOCK_USERS: User[] = [
     lastName: 'Smith',
     location: 'New York',
     country: 'United States',
-    phoneNumber: '+1 (555) 123-4567',
-    avatar:''
+    phoneNumber: '+380 (96) 145-54-26',
+    avatar: '',
   },
   {
-      id: '4',
-      email: 'maria@example.com',
-      password: 'password123',
-      firstName: 'Maria',
-      lastName: 'Kozlova',
-      location: 'Kiev',
-      country: 'Ukraine',
-      phoneNumber: '+380 (99) 123-45-67',
-      avatar:''
+    id: '4',
+    email: 'maria@example.com',
+    password: 'password123',
+    firstName: 'Maria',
+    lastName: 'Kozlova',
+    location: 'Kiev',
+    country: 'Ukraine',
+    phoneNumber: '+380 (99) 345-67-89',
+    avatar: '',
   },
   {
     id: '5',
@@ -53,8 +53,8 @@ export const MOCK_USERS: User[] = [
     lastName: 'Novikov',
     location: 'Minsk',
     country: 'Belarus',
-    phoneNumber: '+375 (29) 123-45-67',
-    avatar:''
+    phoneNumber: '+380 (29) 456-78-90',
+    avatar: '',
   },
   {
     id: '6',
@@ -64,7 +64,7 @@ export const MOCK_USERS: User[] = [
     lastName: 'User',
     location: 'Astana',
     country: 'Kazakhstan',
-    phoneNumber: '+7 (777) 123-45-67',
-    avatar:''
-  }
+    phoneNumber: '+380 (77) 567-89-01',
+    avatar: '',
+  },
 ];
